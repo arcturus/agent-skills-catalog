@@ -46,19 +46,6 @@ Node.js/TypeScript service that ingests and catalogs Claude Skills from public G
 - `scripts/stop.sh` — stop the running service
 - `scripts/logs.sh` — tail log files (`ingestion`, `rest`, `mcp`)
 
-## Deployment (GitHub Actions)
-
-The workflow in `.github/workflows/ci.yml` runs on push to `main`: it builds, runs tests, and can deploy via SSH.
-
-**GitHub Secrets** (for deploy job):
-
-- `DEPLOY_HOST` — remote server hostname
-- `DEPLOY_USER` — SSH user
-- `DEPLOY_SSH_KEY` — private key for SSH
-- `DEPLOY_PATH` — path on server (e.g. `/var/www/skills-catalog`)
-
-Deploy is optional; the job uses `continue-on-error: true` if secrets are not set.
-
 ## Configuration
 
 | Variable | Description | Default |
