@@ -158,7 +158,12 @@
   function render() {
     const skills = getFilteredSkills();
     grid.innerHTML = '';
-    skills.forEach(skill => grid.appendChild(renderCard(skill)));
+    skills.forEach((skill, index) => {
+      const card = renderCard(skill);
+      card.style.setProperty('--stagger', Math.min(index, 12));
+      if (index === 0) card.classList.add('skill-card--featured');
+      grid.appendChild(card);
+    });
 
     countEl.textContent = `${skills.length} skill${skills.length !== 1 ? 's' : ''} in catalog`;
     loadingEl.hidden = true;
