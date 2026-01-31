@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "devblueprint": {
+      "url": "https://pm.jordano.es/api/mcp",
+      "headers": {
+        "Authorization": "Bearer mcp_sk_5zMF95zLhYlIl4ZO_5RSJ9Y9KMLt9U4DWoijUUkEnoM"
+      }
+    }
+  }
+}
