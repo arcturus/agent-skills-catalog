@@ -33,7 +33,16 @@ Node.js/TypeScript service that ingests and catalogs Claude Skills from public G
 
 - **Start server** (REST + MCP + frontend): `npm start` or `npm run dev`
 - **Open frontend**: visit `http://localhost:3000` for the skills catalog UI (search, category filters, Copy / Download / GitHub per skill).
-- **Ingest skills from GitHub**: set `GITHUB_REPOS=owner/repo` and `GITHUB_TOKEN` in `.env`, then `npm run ingest` (GitHub Search API requires a token)
+
+### Ingest repos
+
+Set `GITHUB_REPOS` (comma-separated `owner/repo`) and `GITHUB_TOKEN` in `.env`, then run:
+
+```bash
+npm run ingest
+```
+
+This scans the configured repos for SKILL.md files and populates the catalog. The GitHub API requires a token for search; create one at https://github.com/settings/tokens (no scopes needed for public repos).
 - **REST API**:
   - `GET /skills` — list all skills
   - `GET /skills/search?q=...` — search by name/description
